@@ -9,13 +9,24 @@
   <body>
     <div id="root"></div>
 
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+
     <script>
-      const heading = document.createElement('h1');
-      const classAttr = document.createAttribute('class');
-      classAttr.value = 'title';
-      heading.setAttributeNode(classAttr);
-      heading.innerText = 'Namaste React';
-      document.getElementById('root').appendChild(heading);
+      const heading = React.createElement(
+        'h1',
+        { class: 'title' },
+        'Namaste React'
+      );
+
+      const root = ReactDOM.createRoot(document.getElementById('root'));
+      root.render(heading);
     </script>
   </body>
 </html>
