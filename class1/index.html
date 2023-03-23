@@ -7,7 +7,17 @@
     <title>Namaste React</title>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <h1>Syket</h1>
+    </div>
+
+    <div class="super_paremt">
+      <div class="immediate_parent">
+        <h1 class="title">
+          <p>Syket Bhattachergee</p>
+        </h1>
+      </div>
+    </div>
 
     <script
       crossorigin
@@ -17,16 +27,23 @@
       crossorigin
       src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
     ></script>
-
     <script>
-      const heading = React.createElement(
-        'h1',
-        { class: 'title' },
-        'Namaste React'
+      const spDiv = React.createElement(
+        'div',
+        { className: 'super_parent' },
+        React.createElement(
+          'div',
+          { className: 'immediate_parent' },
+          React.createElement(
+            'h1',
+            { className: 'title' },
+            React.createElement('p', {}, 'Syket Bhattachergee')
+          )
+        )
       );
 
       const root = ReactDOM.createRoot(document.getElementById('root'));
-      root.render(heading);
+      root.render(spDiv);
     </script>
   </body>
 </html>
